@@ -1,11 +1,14 @@
+#variables:
 CC = gcc
 FLAGS = -Wall
 AR = ar
 
-mains: libmyMath.a mainProg.o
-	$(CC) $(FLAGS) -o mains libmyMath.a mainProg.o
-maind: libmyMath.so mainProg.o
-	$(CC) $(FLAGS) -o maind ./libmyMath.so mainProg.o
+all: mains maind
+
+mains: mainProg.o libmyMath.a 
+	$(CC) $(FLAGS) -o mains mainProg.o  libmyMath.a 
+maind: mainProg.o libmyMath.so 
+	$(CC) $(FLAGS) -o maind mainProg.o ./libmyMath.so 
 
 # Creating static lib
 libmyMath.a: power.o basicMath.o
@@ -21,11 +24,12 @@ power.o: power.c myMath.h
 basicMath.o: basicMath.c myMath.h
 	$(CC) $(FLAGS) -c basicMath.c
 
+#Creates a static library
 mymaths: libmyMath.a
 
 mymathd: libmyMath.so
 
 .PHONY: all clean
-all:
+
 clean: 
 	rm -f *.o *.a *.so maind mains
