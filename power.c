@@ -1,7 +1,6 @@
 #include "myMath.h"
 #define  E 2.7182818284590452354 
 
-wdw
 double Exp(int x){
     double ans = 1;
     for (int i = 0; i < x; i++)
