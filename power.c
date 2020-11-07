@@ -1,7 +1,7 @@
 #include "myMath.h"
 #define  E 2.7182818284590452354 
 
-double Exp(int x){
+double Exponent(int x){
     double ans = 1;
     for (int i = 0; i < x; i++)
     {
@@ -9,7 +9,7 @@ double Exp(int x){
     }
     return ans;
 }
-double Pow(double x , int y){
+double Power(double x , int y){
     double ans = 1;
     for (int i = 0; i < y; i++)
     {
