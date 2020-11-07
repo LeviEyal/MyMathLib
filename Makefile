@@ -17,7 +17,7 @@ libmyMath.a: power.o basicMath.o
 libmyMath.so: power.o basicMath.o
 	$(CC) -shared -o libmyMath.so power.o basicMath.o
 
-mainProg.o: main.c myMath.h
+main.o: main.c myMath.h
 	$(CC) $(FLAGS) -c main.c
 power.o: power.c myMath.h
 	$(CC) $(FLAGS) -c power.c
