@@ -10,5 +10,5 @@ double mul(double x , int y){
     return x+y;
 }
 double div(double x, int y){
-    return x/y;
+    return (x/y);
 }
